@@ -7,7 +7,7 @@ import os
 
 
 default_greeting = "Welcome {0.name} to {1.name}!"
-default_settings = {"GREETING": default_greeting, "ON": True, "CHANNEL": None}
+default_settings = {"GREETING": default_greeting, "ON": False, "CHANNEL": None}
 
 class Welcome:
     """Welcomes new members to the server in the default channel"""
@@ -22,7 +22,7 @@ class Welcome:
     async def welcomeset(self, ctx):
         """Sets welcome module settings"""
         server = ctx.message.server
-        if not self.settings.get(server.id,False):
+        if server.id not in self.settings:
             self.settings[server.id] = default_settings
             self.settings[server.id]["CHANNEL"] = server.default_channel.id
             fileIO("data/welcome/settings.json","save",self.settings)
@@ -87,7 +87,7 @@ class Welcome:
 
     async def member_join(self, member):
         server = member.server
-        if not self.settings.get(server.id,False):
+        if server.id not in self.settings:
             self.settings[server.id] = default_settings
             self.settings[server.id]["CHANNEL"] = server.default_channel.id
             fileIO("data/welcome/settings.json","save",self.settings)
