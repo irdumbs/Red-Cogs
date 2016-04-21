@@ -1,0 +1,6 @@
+{
+    "AUTHOR" : "Will, irdumb, Nikki, and Canule",
+    "DESCRIPTION" : "A cog that translates all text the bot says to lolspeeak if the setting is on for the server.\n\nThis is the first cog of it's kind. It will probably not play nicely with future cogs of a similar format. Take caution when loading cogs like this.\n\n[p]unload lolz should fix anything that goes wrong unless other cogss overwrite important functions\n\nDevelopers, please speak with Will or irdumb if needed.\n\nNO MORE MONKEY PATCHING",
+    "DISABLED" : false,
+    "NAME" : "TRANSLATEZ EVERYTHIN TEH BOT SEZ INTO LOLCAT/LOLSPEAK"
+}
